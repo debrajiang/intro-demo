@@ -1,0 +1,31 @@
+---
+title: "STA112fs"
+author: "debra"
+date: "2015/8/27"
+output: html_document
+---
+load the dplyer and ggplot for visualization 
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+load data:
+```{r}
+gapminder <- read.csv("https://stat.duke.edu/~mc301/data/gapminder.csv")
+```
+
+filter for 2007 data
+```{r}
+gap07 <- gapminder %>%
+filter (year == 2007)
+```
+
+```{r}
+qplot(x = gdpPercap, y = lifeExp, data = gap07)
+
+```
+
+```{r}
+qplot(x = gdpPercap, y = lifeExp, color = continent, data = gap07)
+```
+
